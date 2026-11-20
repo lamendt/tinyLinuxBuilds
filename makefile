@@ -1,12 +1,12 @@
 CC      = gcc
 NASM    = nasm
-EXEC	= tinyShell
+EXEC	= prog
 SRC		= main
 LINK	= make/link.ld
 PAYLOAD	= make/payload
 HEADER	= make/header.asm
 BIN		= make/code.bin
-DROPPER	= 'sed 1d $$0|xz -d>/tmp/g;chmod +x /tmp/g;/tmp/g;exit\n' 
+DROPPER	= 'sed 1d $$0|xz -d>/tmp/a;chmod +x /tmp/a;/tmp/a;exit\n' 
 
 CFLAGS  = -c -nostdlib -ffreestanding -fno-asynchronous-unwind-tables \
           -fno-unwind-tables -fno-stack-protector -fomit-frame-pointer \
